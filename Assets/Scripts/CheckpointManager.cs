@@ -4,9 +4,9 @@ public class CheckpointManager : MonoBehaviour
 {
     public static CheckpointManager Instance { get; private set; }
 
-    private Vector3 lastCheckpointPosition;
+    private Vector3 UltimoCheckpoint;
     private bool hasCheckpoint = false;
-    private Vector3 initialSpawnPosition;
+    private Vector3 SpawnInicial;
 
     private void Awake()
     {
@@ -25,20 +25,20 @@ public class CheckpointManager : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
-            initialSpawnPosition = player.transform.position;
+            SpawnInicial = player.transform.position;
         }
     }
 
     public void SetCheckpoint(Vector3 position)
     {
-        lastCheckpointPosition = position;
+        UltimoCheckpoint= position;
         hasCheckpoint = true;
     }
 
     public void RespawnPlayer(GameObject player)
     {
         
-        Vector3 targetPos = hasCheckpoint ? lastCheckpointPosition : initialSpawnPosition;
+        Vector3 targetPos = hasCheckpoint ? UltimoCheckpoint: SpawnInicial;
         player.transform.position = targetPos;
 
         
