@@ -31,11 +31,11 @@ public class Encuesta : MonoBehaviour
         string q4Feedback = feedbackInput != null ? feedbackInput.text : "";
         string q5Desafio = DesafioInput != null ? DesafioInput.text : "";
 
-        Debug.Log($"P1 Control: {q1Control} / 5");
-        Debug.Log($"P2 Satisfacción: {q2Satisfaction} / 5");
-        Debug.Log($"P3 Narrativa: {q3Fantasy} / 5");
-        Debug.Log($"P4 Feedback: {q4Feedback}");  
-        Debug.Log($"P5 Desafío: {q5Desafio}"); 
+        Debug.Log($"¿Cuánta tensión te generó este juego?: {q1Control} / 5");
+        Debug.Log($"¿Los checkpoints te ayudan a snetir alivio?: {q2Satisfaction} / 5");
+        Debug.Log($"¿Sientes que este juego es competitivo?: {q3Fantasy} / 5");
+        Debug.Log($"Describe que sentiste al pasar el nivel y si sientes desafiante al pasarlo: {q4Feedback}");  
+        Debug.Log($"¿Qué mejorarías en el juego?: {q5Desafio}"); 
         if (surveyPanel != null)
         {
             surveyPanel.SetActive(false);
