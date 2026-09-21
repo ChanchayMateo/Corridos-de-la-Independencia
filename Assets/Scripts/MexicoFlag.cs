@@ -6,6 +6,7 @@ public class MexicoFlag : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Metricas.Instance?.RegisterDeath();
             UiManager uiManager = Object.FindFirstObjectByType<UiManager>();
             
             if (uiManager != null)

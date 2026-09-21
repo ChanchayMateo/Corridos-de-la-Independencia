@@ -6,6 +6,7 @@ public class Spikes : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Metricas.Instance?.RegisterDeath();
             if (CheckpointManager.Instance != null)
             {
                 CheckpointManager.Instance.RespawnPlayer(collision.gameObject);
